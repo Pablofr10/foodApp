@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodApp/burgepage.dart';
 import 'package:foodApp/foodtabs.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -177,7 +178,13 @@ class _DashboardPageState extends State<DashboardPage>
       padding: EdgeInsets.only(left: 15.0),
       child: InkWell(
         onTap: () {
-          // Todo
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => BurgerPage(
+                    heroTag: foodName,
+                    foodName: foodName,
+                    pricePerItem: price,
+                    imgPath: imgPath,
+                  )));
         },
         child: Container(
           height: 175.0,
