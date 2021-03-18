@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class FoodTab extends StatefulWidget {
   @override
@@ -12,7 +14,8 @@ class _FoodTabState extends State<FoodTab> {
       child: Scaffold(
         body: ListView(
           children: [
-            _buildListItem('Delicious hot dog', 4.0, '6', 'assets/hotdog.png')
+            _buildListItem('Delicious hot dog', 4.0, '6', 'assets/hotdog.png'),
+            _buildListItem('Cheese pizza', 4.0, '6', 'assets/pizza.png')
           ],
         ),
       ),
@@ -38,9 +41,43 @@ class _FoodTabState extends State<FoodTab> {
                   child: Center(
                     child: Image.asset(imgPath, height: 50.0, width: 50.0),
                   ),
+                ),
+                SizedBox(width: 20.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      foodName,
+                      style: GoogleFonts.notoSans(
+                          fontSize: 14.0, fontWeight: FontWeight.w400),
+                    ),
+                    SmoothStarRating(
+                      allowHalfRating: false,
+                      onRated: (v) {},
+                      starCount: rating.toInt(),
+                      rating: rating,
+                      size: 15.0,
+                      isReadOnly: true,
+                      color: Color(0xFFFFD143),
+                      borderColor: Colors.green,
+                      spacing: 0.0,
+                    )
+                  ],
                 )
               ],
             ),
+          ),
+          FloatingActionButton(
+            onPressed: () {},
+            heroTag: foodName,
+            mini: true,
+            child: Center(
+              child: Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+            ),
+            backgroundColor: Color(0xFFFE7D6A),
           )
         ],
       ),
