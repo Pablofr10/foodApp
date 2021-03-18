@@ -66,17 +66,30 @@ class _DashboardPageState extends State<DashboardPage> {
                   borderRadius: BorderRadius.circular(10.0)),
               child: TextField(
                 decoration: InputDecoration(
-                    hintText: 'Search',
-                    hintStyle: GoogleFonts.notoSans(fontSize: 14.0),
-                    border: InputBorder.none,
-                    fillColor: Colors.grey.withOpacity(0.5),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    )),
+                  hintText: 'Search',
+                  hintStyle: GoogleFonts.notoSans(fontSize: 14.0),
+                  border: InputBorder.none,
+                  fillColor: Colors.grey.withOpacity(0.5),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.grey,
+                  ),
+                ),
               ),
             ),
-          )
+          ),
+          SizedBox(height: 20.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0),
+            child: Text(
+              'Recommended',
+              style: GoogleFonts.notoSans(
+                fontWeight: FontWeight.w500,
+                fontSize: 18.0,
+              ),
+            ),
+          ),
+          SizedBox(height: 15.0)
         ],
       ),
     );
